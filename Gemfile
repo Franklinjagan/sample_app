@@ -10,6 +10,7 @@ group :development, :test do
 gem 'sqlite3', '1.3.5'
 gem 'rspec-rails', '2.10.0'
 gem 'guard-rspec', '0.5.5'
+
 end
 
 gem 'annotate', '2.5.0', group: :development
@@ -27,6 +28,7 @@ gem 'rb-inotify', '~> 0.9'
 gem 'libnotify', '0.5.9'
 gem 'guard-spork', '0.3.2'
 gem 'spork', '0.9.0'
+gem 'factory_girl_rails', '1.4.0'
 end
 group :production do
 gem 'pg', '0.12.2'

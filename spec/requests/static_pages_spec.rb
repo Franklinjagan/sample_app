@@ -12,7 +12,8 @@ describe "Static pages" do
 	click_link "Home"
 	click_link "Sign up Now!"
 	page.should #
-	
+	click_link "Sample app"
+	page.should #
 end
 
 subject { page }

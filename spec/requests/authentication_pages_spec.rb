@@ -53,7 +53,14 @@ describe "Authentication" do
 		describe "for non-signed-in users" do
 			describe "in the Users controller" do
 				let(:user) { FactoryGirl.create(:user) }
-				describe "in the Microposts controller" do
+				
+				describe "in the Users controller" do
+					describe "visiting the edit page" do
+						before { visit edit_user_path(user) }
+						it { should have_selector('title', text: 'Sign in') }
+					end
+
+					describe "in the Microposts controller" do
 					describe "submitting to the create action" do
 						before { post microposts_path }
 						specify { response.should redirect_to(signin_path) }
@@ -63,11 +70,6 @@ describe "Authentication" do
 						specify { response.should redirect_to(signin_path) }
 					end
 				end
-				describe "in the Users controller" do
-					describe "visiting the edit page" do
-						before { visit edit_user_path(user) }
-						it { should have_selector('title', text: 'Sign in') }
-					end
 					describe "submitting to the update action" do
 						before { put user_path(user) }
 						specify { response.should redirect_to(signin_path) }
